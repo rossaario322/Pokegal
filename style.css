@@ -1,12 +1,82 @@
 /* Estilo base da página (o enunciado pede o body no início) */
 body {
   margin: 0;
-  padding: 16px;
   font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
   background-color: #f2f2f2;
   color: #222;
 }
 
+/* Cabeçalho e menu */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px 24px;
+  background-color: #dc0a2d;
+  border-bottom: 4px solid rgb(139, 0, 0);
+}
+
+.logo { color: white; font-size: 24px; font-weight: bold; text-decoration: none; }
+
+nav ul { display: flex; justify-content: center; align-items: center; gap: 8px; margin: 0; padding: 0; list-style: none; }
+nav a { display: block; padding: 6px 12px; color: white; text-decoration: none; border-radius: 6px; }
+nav a:hover { background-color: rgb(139, 0, 0); }
+
+/* Conteúdo */
+main { max-width: 1100px; margin: 0 auto; padding: 24px 16px; }
+h1 { margin-top: 0; color: #dc0a2d; }
+h2, h3 { margin-top: 0; }
+main img { max-width: 100%; height: auto; }
+
+/* Botões */
+.botao { padding: 8px 14px; color: white; background-color: #1e88e5; border: none; border-radius: 6px; cursor: pointer; }
+
+.botao:hover { background-color: #1565c0; }
+header .botao { background-color: white; color: rgb(139, 0, 0); font-weight: bold; }
+
+/* Formulários */
+label { display: block; margin-bottom: 4px; font-weight: bold; }
+
+input, select, textarea {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 400px;
+  padding: 8px;
+  margin-bottom: 12px;
+  font-family: inherit;
+  border: 2px solid #dedede;
+  border-radius: 6px;
+}
+
+/* Seletor de atributo, pseudo-classe (:focus) e pseudo-elemento (::placeholder) */
+input[type="search"] { border-radius: 20px; }
+input:focus, select:focus, textarea:focus { outline: none; border-color: #1e88e5; }
+input::placeholder, textarea::placeholder { color: gray; }
+
+#formContato p { margin: 0; }
+#contador { margin-bottom: 12px; font-size: 12px; color: gray; }
+#aviso, #mensagem { font-weight: bold; }
+
+#listaMensagens { padding-left: 0; list-style: none; }
+#listaMensagens li { padding: 8px 0; border-bottom: 1px solid #dedede; }
+#listaMensagens .botao { margin-left: 8px; padding: 4px 10px; background-color: #dc0a2d; }
+
+/* Rodapé (ainda precisa existir um <footer> no HTML) */
+footer { padding: 16px; text-align: center; color: gray; border-top: 2px solid #dedede; }
+
+/* Página inicial */
+.apresentacao { text-align: center; margin-bottom: 24px; }
+.apresentacao img { width: 220px; }
+.apresentacao figcaption { font-size: 14px; color: gray; }
+
+.grupo { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 24px; }
+
+.grupo h2 { grid-column: 1 / -1; margin-bottom: 0; }
+
+/* Pokédex */
 .pokedex {
   background-color: #dc0a2d;
   border: 4px solid rgb(139, 0, 0);
@@ -15,12 +85,7 @@ body {
   width: 320px;
 }
 
-.pokedex-luzes {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 16px;
-}
+.pokedex-luzes { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
 
 .luz { width: 14px; height: 14px; border-radius: 50%; border: 2px solid white; }
 .luz-grande { width: 48px; height: 48px; background: radial-gradient(circle at 30% 30%, #b3e5ff, #1e88e5); }
@@ -45,6 +110,14 @@ body {
 
 .pokedex-tela progress { width: 100%; accent-color: #0f380f; }
 
+/* Cada status em uma linha: texto em cima, barra embaixo */
+.pokedex-tela label,
+.pokedex-tela progress { display: block; }
+.pokedex-tela label { margin-bottom: 0; font-weight: normal; }
+
+.pokedex-titulo { color: white; margin-bottom: 12px; }
+
+/* Página Explorar */
 .layout-explorar {
   display: grid;
   grid-template-columns: 1fr 340px; /* cartões | pokédex */
@@ -53,50 +126,43 @@ body {
 }
 
 /* O h1 ocupa a linha inteira, em cima das duas colunas */
-.layout-explorar > h1 {
-  grid-column: 1 / -1;
-}
+.layout-explorar > h1 { grid-column: 1 / -1; margin-bottom: 0; }
 
-.pokedex-titulo { color: white; }
+/* Busca, mensagem e cartões na esquerda; pokédex na direita */
+.controles, #mensagem, .lista-cartoes { grid-column: 1; }
+.layout-explorar > .pokedex { grid-column: 2; grid-row: 2 / span 3; }
 
-/* Cada status em uma linha: texto em cima, barra embaixo */
-.pokedex-tela label,
-.pokedex-tela progress {
-  display: block;
-}
+.controles { padding: 16px; background-color: white; border: 2px solid #dedede; border-radius: 12px; }
+#mensagem { margin: 0; }
 
-.lista-cartoes {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
+.lista-cartoes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
 /* Cartões */
-.cartao {
-  background-color: white;
-  border: 2px solid #dedede;
-  border-radius: 12px;
-  padding: 12px;
-  text-align: center;
-}
+.cartao { background-color: white; border: 2px solid #dedede; border-radius: 12px; padding: 12px; text-align: center; }
+
+main > .cartao, .grupo .cartao { text-align: left; }
+main > .cartao { margin-bottom: 16px; padding: 16px; }
 
 .cartao figure { margin: 0; }
 
 /* A arte oficial vem com 475px: sem isso ela estoura a coluna do grid */
-.cartao img {
-  width: 100%;
-  height: auto;
-}
+.cartao img { width: 100%; height: auto; }
 
-.cartao figcaption {
-  font-weight: bold;
-  text-transform: capitalize;
-}
-
-.botao-favorito.marcado { background-color: gold; }
+.cartao figcaption { font-weight: bold; text-transform: capitalize; }
+.lista-cartoes .botao { margin: 4px 2px 0; }
+.botao-favorito.marcado { background-color: gold; color: #222; }
 
 @media (max-width: 800px) {
+  header { justify-content: center; }
   .layout-explorar { grid-template-columns: 1fr; }
+  .layout-explorar > .pokedex { grid-column: 1; grid-row: auto; }
   .lista-cartoes { grid-template-columns: repeat(2, 1fr); }
-  .pokedex { width: 100%; }
+  .pokedex { width: auto; }
 }
+
+/* Modo escuro: o script.js liga/desliga a classe "escuro" no body */
+body.escuro { background-color: #1c1c24; color: #eee; }
+body.escuro .cartao, body.escuro .controles { background-color: #2a2a35; border-color: #444; }
+body.escuro input, body.escuro select, body.escuro textarea { background-color: #2a2a35; color: #eee; border-color: #444; }
+body.escuro #listaMensagens li { border-color: #444; }
+body.escuro input:focus, body.escuro select:focus, body.escuro textarea:focus { border-color: #1e88e5; }
