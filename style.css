@@ -1,0 +1,102 @@
+/* Estilo base da página (o enunciado pede o body no início) */
+body {
+  margin: 0;
+  padding: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f2f2f2;
+  color: #222;
+}
+
+.pokedex {
+  background-color: #dc0a2d;
+  border: 4px solid rgb(139, 0, 0);
+  border-radius: 16px 16px 16px 60px;
+  padding: 20px;
+  width: 320px;
+}
+
+.pokedex-luzes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.luz { width: 14px; height: 14px; border-radius: 50%; border: 2px solid white; }
+.luz-grande { width: 48px; height: 48px; background: radial-gradient(circle at 30% 30%, #b3e5ff, #1e88e5); }
+.luz-vermelha { background-color: red; }
+.luz-amarela { background-color: gold; }
+.luz-verde { background-color: limegreen; }
+
+.pokedex-tela {
+  background-color: #9bbc0f;      /* verde de Game Boy */
+  color: #0f380f;
+  border: 12px solid #dedede;
+  border-radius: 8px;
+  padding: 12px;
+  min-height: 260px;
+  font-family: "Courier New", monospace;
+}
+
+.pokedex-tela .sprite {
+  width: 128px;
+  image-rendering: pixelated;     /* deixa o sprite nítido, sem borrar */
+}
+
+.pokedex-tela progress { width: 100%; accent-color: #0f380f; }
+
+.layout-explorar {
+  display: grid;
+  grid-template-columns: 1fr 340px; /* cartões | pokédex */
+  gap: 24px;
+  align-items: start;
+}
+
+/* O h1 ocupa a linha inteira, em cima das duas colunas */
+.layout-explorar > h1 {
+  grid-column: 1 / -1;
+}
+
+.pokedex-titulo { color: white; }
+
+/* Cada status em uma linha: texto em cima, barra embaixo */
+.pokedex-tela label,
+.pokedex-tela progress {
+  display: block;
+}
+
+.lista-cartoes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* Cartões */
+.cartao {
+  background-color: white;
+  border: 2px solid #dedede;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+}
+
+.cartao figure { margin: 0; }
+
+/* A arte oficial vem com 475px: sem isso ela estoura a coluna do grid */
+.cartao img {
+  width: 100%;
+  height: auto;
+}
+
+.cartao figcaption {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.botao-favorito.marcado { background-color: gold; }
+
+@media (max-width: 800px) {
+  .layout-explorar { grid-template-columns: 1fr; }
+  .lista-cartoes { grid-template-columns: repeat(2, 1fr); }
+  .pokedex { width: 100%; }
+}

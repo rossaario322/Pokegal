@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorar Pokedéx</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">PokeGal</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ínicio</a></li>
+                <li><a href="explorar.html">Explorar</a></li>
+                <li><a href="ferramentas.html">Ferramentas</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <button id="botaoTema" class="botao" type="button">Modo escuro</button>
+    </header>
+
+    <main class="layout-explorar">
+        <h1>Explorar Pokémon</h1>
+
+        <section class="controles">
+            <h2>Buscar</h2>
+            <label for="campoBusca">Nome</label>
+            <input type="search" id="campoBusca" placeholder="Ex.: pikachu">
+
+            <label for="filtroTipo">Tipo</label>
+            <select id="filtroTipo">
+            <option value="todos">Todos</option>
+            <option value="fire">Fogo</option>
+            <option value="water">Água</option>
+            <option value="grass">Planta</option>
+            <option value="electric">Elétrico</option>
+            </select>
+        </section>
+
+        <p id="mensagem"></p>
+
+        <section class="lista-cartoes" id="listaPokemon"></section>
+
+        <!-- O DISPLAY ESTILO POKÉDEX -->
+        <aside class="pokedex">
+            <h2 class="pokedex-titulo">Pokédex</h2>
+            <div class="pokedex-luzes">
+            <span class="luz luz-grande"></span>
+            <span class="luz luz-vermelha"></span>
+            <span class="luz luz-amarela"></span>
+            <span class="luz luz-verde"></span>
+            </div>
+            <section class="pokedex-tela" id="telaPokedex">
+            <p>Escolha um Pokémon…</p>
+            </section>
+        </aside>
+        </main>
+    
+    <script src="explorar.js"></script>
+</body>
+</html>
