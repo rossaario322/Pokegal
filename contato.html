@@ -19,7 +19,53 @@
         </nav>
         <button id="botaoTema" class="botao" type="button">Modo escuro</button>
     </header>
-    
+
+    <main>
+        <h1>Contato</h1>
+
+        <section class="cartao">
+            <h2>Fale com a gente</h2>
+            <p>Achou algum erro na Pokédex ou tem uma sugestão? Manda uma mensagem pra gente!</p>
+
+            <form id="formContato">
+                <p>
+                    <label for="campoNome">Nome</label>
+                    <input type="text" id="campoNome" required>
+                </p>
+
+                <p>
+                    <label for="campoEmail">E-mail</label>
+                    <input type="email" id="campoEmail" placeholder="seuemail@exemplo.com" required>
+                </p>
+
+                <p>
+                    <label for="campoAssunto">Assunto</label>
+                    <select id="campoAssunto">
+                        <option value="Dúvida">Dúvida</option>
+                        <option value="Sugestão">Sugestão</option>
+                        <option value="Erro no site">Erro no site</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="campoTexto">Mensagem</label>
+                    <textarea id="campoTexto" rows="5" cols="40" maxlength="300" required></textarea>
+                </p>
+                <p id="contador">0/300</p>
+
+                <button type="submit" class="botao">Enviar</button>
+            </form>
+
+            <p id="aviso"></p>
+        </section>
+
+        <section class="cartao">
+            <h2>Mensagens enviadas</h2>
+            <ul id="listaMensagens"></ul>
+        </section>
+    </main>
+
     <script src="contato.js"></script>
 </body>
 </html>
