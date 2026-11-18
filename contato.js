@@ -114,21 +114,20 @@ formulario.addEventListener("submit", async (event) => {
         }
 
         const dados = await resposta.json();
-        console.log("POST", resposta.status, dados);
+        // o JSONPlaceholder devolve 201 e a mensagem criada, mas não salva de verdade.
 
         novaMensagem.id = gerarId();
         mensagensEnviadas.push(novaMensagem);
         salvarMensagens();
         mostrarMensagens();
 
-        aviso.textContent = "Mensagem enviada! Valeu, " + novaMensagem.nome + "!";
+        aviso.textContent = "Status " + resposta.status + ": mensagem enviada! Valeu, " + novaMensagem.nome + "!";
         formulario.reset();
         contador.textContent = "0/300";
         contador.style.color = "";
     } catch (erro) {
-        // mensagem para o usuário, não só no console.
-        console.error(erro);
-        aviso.textContent = "Não foi possível enviar a mensagem. Tente de novo.";
+        // mensagem para o usuário na tela, com o motivo do erro.
+        aviso.textContent = "Não foi possível enviar a mensagem. Tente de novo. (" + erro.message + ")";
     }
 });
 

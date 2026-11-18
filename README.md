@@ -8,9 +8,10 @@ Site publicado: (colocar o link do GitHub Pages aqui)
 
 ## Integrantes
 
-- **Guilherme:** fez a base do site e a parte de ferramentas.
+- **Guilherme:** fez a base do site.
 - **João:** fez o CSS e o modo escuro.
 - **Victor:** fez a página de contato (formulário e envio das mensagens) e o relatório de debugging do TDE 02.
+- **Lucas:** fez a página de ferramentas (calculadora e estatísticas dos favoritos) e o TDE 01.
 
 ## Páginas
 
@@ -40,7 +41,24 @@ Para o formulário de contato usamos o **JSONPlaceholder**:
 
 ## TDE 01 - Funções em JavaScript
 
+Fica na página Ferramentas (`ferramenta.js`). Tem uma calculadora e uma parte que usa os Pokémon favoritos (salvos no localStorage pela página Explorar).
 
+| Função | Recebe | Devolve | Onde é usada |
+| --- | --- | --- | --- |
+| `somar(a, b)` | dois números | a soma | botão Somar |
+| `subtrair(a, b)` | dois números | a diferença | botão Subtrair |
+| `multiplicar(a, b)` | dois números | o produto | botão Multiplicar |
+| `dividir(a, b)` | dois números | a divisão, ou uma mensagem se `b` for 0 | botão Dividir |
+| `calcular(a, b, operacao)` | dois números e uma função | o resultado de `operacao(a, b)` | dentro do `mostrarResultado` |
+| `mostrarResultado(operacao)` | uma das 4 operações | nada (escreve o resultado na tela) | nos 4 botões |
+| `calcularMedia(numeros)` | um array de números | a média | peso médio dos favoritos |
+| `filtrarPesados(lista)` | o array de favoritos | só os que têm mais de 10 kg | lista "Favoritos com mais de 10 kg" |
+
+- **4 operações:** `somar`, `subtrair`, `multiplicar` e `dividir`. Dividir por zero mostra uma mensagem em vez de `Infinity`.
+- **Array:** `calcularMedia` faz a média dos pesos dos favoritos e `filtrarPesados` filtra os favoritos pelo peso.
+- **Arrow functions:** `calcularMedia` e as funções dentro do `forEach`, `map` e `filter`.
+- **Função anônima:** a `function () { ... }` de cada botão no `addEventListener`.
+- **Callback:** `calcular(a, b, operacao)` recebe a operação como parâmetro. Exemplo: `calcular(10, 2, dividir)` devolve 5.
 
 ## TDE 02 - Debugging em JavaScript
 
