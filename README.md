@@ -4,7 +4,7 @@ Projeto final (RA 3) da matéria de Web Development: Front-End, na PUCPR.
 
 O tema é uma Pokédex. O site puxa os dados reais dos Pokémon de uma API pública, mostra tudo em cartões com busca, filtro por tipo e favoritos, tem uma página de ferramentas e um formulário de contato.
 
-Site publicado: (colocar o link do GitHub Pages aqui)
+Site publicado: https://rossaario322.github.io/Pokegal/
 
 ## Integrantes
 
