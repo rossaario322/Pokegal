@@ -1,26 +1,60 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferramentas Pokedéx</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <a href="index.html" class="logo">PokeGal</a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Ínicio</a></li>
-                <li><a href="explorar.html">Explorar</a></li>
-                <li><a href="ferramentas.html">Ferramentas</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-        </nav>
-        <button id="botaoTema" class="botao" type="button">Modo escuro</button>
-    </header>
-    
-    <script src="script.js"></script>
-    <script src="ferramenta.js"></script>
-</body>
-</html>
+  <!DOCTYPE html>
+  <html lang="pt-BR">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Ferramentas Pokédex</title>
+      <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+      <header>
+          <a href="index.html" class="logo">PokeGal</a>
+          <nav>
+              <ul>
+                  <li><a href="index.html">Início</a></li>
+                  <li><a href="explorar.html">Explorar</a></li>
+                  <li><a href="ferramentas.html">Ferramentas</a></li>
+                  <li><a href="contato.html">Contato</a></li>
+              </ul>
+          </nav>
+          <button id="botaoTema" class="botao" type="button">Modo escuro</button>
+      </header>
+
+      <main>
+          <h1>Ferramentas</h1>
+
+          <section class="cartao">
+              <h2>Calculadora</h2>
+
+              <label for="num1">Primeiro número</label>
+              <input type="number" id="num1">
+
+              <label for="num2">Segundo número</label>
+              <input type="number" id="num2">
+
+              <p>
+                  <button type="button" class="botao" id="btnSomar">Somar</button>
+                  <button type="button" class="botao" id="btnSubtrair">Subtrair</button>
+                  <button type="button" class="botao" id="btnMultiplicar">Multiplicar</button>
+                  <button type="button" class="botao" id="btnDividir">Dividir</button>
+              </p>
+              <p id="resultado"></p>
+          </section>
+
+          <section class="cartao">
+              <h2>Seus favoritos</h2>
+              <p id="mediaPeso"></p>
+
+              <h3>Favoritos com mais de 10 kg</h3>
+              <ul id="listaPesados"></ul>
+          </section>
+      </main>
+
+      <footer>
+          <p>PokeGal · Projeto Final de Web Development: Front-End · PUCPR 2026</p>
+      </footer>
+
+      <script src="script.js"></script>
+      <script src="ferramenta.js"></script>
+  </body>
+  </html>
